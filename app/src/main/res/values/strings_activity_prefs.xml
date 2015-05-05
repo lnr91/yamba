@@ -1,0 +1,8 @@
+<resources>
+    <string name="title_activity_prefs">Preferences</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="server">Server</string>
+    <string name="delay">Please specify time interval in seconds</string>
+
+</resources>
