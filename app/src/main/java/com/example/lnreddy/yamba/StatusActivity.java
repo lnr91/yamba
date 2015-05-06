@@ -56,6 +56,8 @@ public class StatusActivity extends ActionBarActivity {
                 return true;
             case R.id.item_prefs:
                 startActivity(new Intent(this,PrefsActivity.class));
+            case R.id.item_timeline:
+                startActivity(new Intent(this,TimelineActivity.class));
             default:
                 return false;
         }

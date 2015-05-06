@@ -2,9 +2,13 @@ package com.example.lnreddy.yamba;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import winterwell.jtwitter.Twitter;
 
@@ -41,10 +45,19 @@ public class StatusData {
         values.put(C_USER,status.user.name);
         values.put(C_TEXT,status.text);
 
-        db.insertWithOnConflict(TABLE,null,values,SQLiteDatabase.CONFLICT_IGNORE);
+        db.insertWithOnConflict(TABLE, null, values, SQLiteDatabase.CONFLICT_IGNORE);
 
 
     }
+
+    public Cursor query() {
+        db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.query(TABLE,null,null,null,null,null,C_CREATED_AT+" DESC");
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+
 
   class DbHelper extends SQLiteOpenHelper {
 

@@ -22,5 +22,6 @@
         <item>1800000</item>
         <item>3600000</item>
     </string-array>
+    <string name="title_activity_timeline">TimelineActivity</string>
 
 </resources>
